@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import Head from "next/head"
 import { useState } from "react"
 
 import "../../../styles/login.module.css"
@@ -49,6 +50,9 @@ export default function SignUpPage(){
 
     return (
         <main>
+            <Head>
+                <title>Ambit - Sign in</title>
+            </Head>
             <Image className="loginLogoLetterBackground" src={ambitLetterPng}/>
             <div>
                 <form onSubmit={(e) => handleSubmit(e)}>
