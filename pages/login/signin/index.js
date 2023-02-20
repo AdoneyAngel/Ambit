@@ -1,16 +1,19 @@
 import Image from "next/image"
 import Link from "next/link"
 import Head from "next/head"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import "../../../styles/login.module.css"
 import ambitLetterPng from "../../../images/ambitLetter.png"
 
 import logUser from "@/db/functions/logUser"
+import getCookie from '../../../functions/getCookie'
+import { useRouter } from "next/router"
 
 export default function SignInPage(){
     const [mail, setMail] = useState("")
     const [password, setPassword] = useState("")
+    const Router = useRouter()
 
     const handleWriting = (e) => {
         if(e.target.name == "mail"){
@@ -32,9 +35,19 @@ export default function SignInPage(){
 
         logUser(mail, password)
         .then(res => {
-            console.log(res)
+            
+            if(res){
+                Router.push("/home")
+            }
+
         })
     }
+
+    useEffect(() => {
+        if(getCookie("userMail")){
+            Router.push("/home")
+        }
+    }, [])
 
     return (
         <main>

@@ -1,19 +1,22 @@
 import Image from "next/image"
 import Link from "next/link"
 import Head from "next/head"
-import { useState } from "react"
+import { useRouter } from "next/router"
+import { useState, useEffect } from "react"
 
 import "../../../styles/login.module.css"
 import ambitLetterPng from "../../../images/ambitLetter.png"
+import getCookie from "@/functions/getCookie"
 
 //APIs
-import getUsers from "@/db/functions/getUsers"
 import setUserDoc from '../../../db/functions/setUserDoc'
 
 export default function SignUpPage(){
     const [mail, setMail] = useState("")
     const [userName, setUserName] = useState("")
     const [password, setPassword] = useState("")
+
+    const Router = useRouter()
 
     const handleWriting = (e) => {
         if(e.target.name == "name"){
@@ -43,10 +46,18 @@ export default function SignUpPage(){
                     alert(`This ${res.error} is already in use`)
                     
                 }
+            }else{
+                Router.push("/home")
             }
         })
 
     }
+
+    useEffect(() => {
+        if(getCookie("userMail")){
+            Router.push("/home")
+        }
+    }, [])
 
     return (
         <main>
