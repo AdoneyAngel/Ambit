@@ -64,7 +64,7 @@ export default function SignUpPage(){
             <Head>
                 <title>Ambit - Sign up</title>
             </Head>
-            <Image className="loginLogoLetterBackground" src={ambitLetterPng}/>
+            <Image alt="Ambit" className="loginLogoLetterBackground" src={ambitLetterPng}/>
             <div>
                 <form onSubmit={(e) => handleSubmit(e)}>
                     <section className="loginFormContent">
