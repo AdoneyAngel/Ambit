@@ -1,0 +1,15 @@
+:root{
+  --principal-color: #8c5bbe;
+}
+*{
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  outline: none;
+}
+body{
+  background-color: #dedede;
+}
+html{
+  overflow: hidden;
+}
