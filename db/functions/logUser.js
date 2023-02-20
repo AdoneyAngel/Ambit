@@ -1,4 +1,5 @@
 import getUsers from "./getUsers"
+import setCookie from '../../functions/setCookie'
 
 export default async function logUser(mail, password){
 
@@ -13,6 +14,7 @@ export default async function logUser(mail, password){
     })
 
     if(userLogged){
+        setCookie("userMail", mail)
         return true
 
     }else{
