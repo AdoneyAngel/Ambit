@@ -51,7 +51,7 @@ export default function SignUpPage(){
     return (
         <main>
             <Head>
-                <title>Ambit - Sign in</title>
+                <title>Ambit - Sign up</title>
             </Head>
             <Image className="loginLogoLetterBackground" src={ambitLetterPng}/>
             <div>
