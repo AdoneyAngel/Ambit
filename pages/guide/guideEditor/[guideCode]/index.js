@@ -57,7 +57,6 @@ export default function guideEditorPage (){
         }else{
             const userMail = getCookie("userMail")
             await updateGuide(userMail, newGuide, guideCode)
-            console.log("no mail")
         }
     }
     
@@ -68,15 +67,11 @@ export default function guideEditorPage (){
 
         })
 
-        console.log("updateGuideCode")
-
         loadUserMail()
 
     }, [guideCode])
 
     useEffect(() => {
-
-        console.log("update")
 
         saveGuide(userMail, guideStructure)
         

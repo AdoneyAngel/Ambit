@@ -7,7 +7,7 @@ export default function GuideStepsEditorItems({guideData, steps, indexChangeGuid
     let nSteps = -1
 
     const handleChangeStructure = (element) => {
-        let newGuideStructure = guideStructure
+        let newGuideStructure = {...guideStructure}
 
         const elementObject = element.target
 
