@@ -22,7 +22,7 @@ export default function GuideList ({mail}){
                     <h1>{guide.name}</h1>
                 </header>
                 <div className="guideListItemFooter">
-                    <p>{guide.date}</p>
+                    <p>{guide.date.day}/{guide.date.month}/{guide.date.year}</p>
                 </div>
                 <section>
                     <Image className="guideListItemImage" alt="Guide" src={pruebaImagen}/>

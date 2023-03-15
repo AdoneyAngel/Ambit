@@ -8,9 +8,15 @@ user = {
     joinedGuides: ["Guide Code"],
     guides: [
         {
+            name: "Nombre de la guia",
             allowedUsers: ["user mail"],
             code: "abcdef",
-            date: "last update date",
+            date: {
+                day: "day",
+                month: "month",
+                year: "year",
+                seconds: "total day seconds"
+            },
             private: "boolean",
             steps: [
                 {

@@ -1,9 +1,10 @@
 import { collection, getDocs } from "firebase/firestore"
 import db from "../db"
 
-export default async function getUserAccount(mail){
+export default async function getUserDoc(mail){
 
     if(!mail || mail === undefined){
+        console.log(0)
         return false
     }
 
@@ -12,5 +13,5 @@ export default async function getUserAccount(mail){
 
     const userAccount = users.docs.filter(user => user.data().profile.mail === mail)[0]
 
-    return userAccount.data()
+    return userAccount
 }

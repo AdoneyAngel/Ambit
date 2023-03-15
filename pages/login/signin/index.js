@@ -37,7 +37,7 @@ export default function SignInPage(){
         .then(res => {
             
             if(res){
-                Router.push("/home")
+                Router.push("/")
             }
 
         })
@@ -45,7 +45,7 @@ export default function SignInPage(){
 
     useEffect(() => {
         if(getCookie("userMail")){
-            Router.push("/home")
+            Router.push("/")
         }
     }, [])
 

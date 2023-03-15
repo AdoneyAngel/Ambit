@@ -47,7 +47,7 @@ export default function SignUpPage(){
                     
                 }
             }else{
-                Router.push("/home")
+                Router.push("/")
             }
         })
 
@@ -55,7 +55,7 @@ export default function SignUpPage(){
 
     useEffect(() => {
         if(getCookie("userMail")){
-            Router.push("/home")
+            Router.push("/")
         }
     }, [])
 
